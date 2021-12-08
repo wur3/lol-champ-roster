@@ -8,7 +8,6 @@ import ChampList from "../components/ChampList"
 const IndexPage = () => (
   <Layout>
     <Seo title="Home" />
-    <h1>League of Legeneds</h1>
     <ChampList />
     
   </Layout>
