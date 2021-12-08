@@ -1,6 +1,7 @@
 import * as React from 'react';
 import axios from 'axios';
 import './ChampList.css';
+import ListItem from './ListItem';
 
 interface Champion {
   blurb: string,
@@ -37,9 +38,9 @@ class ChampList extends React.Component<{},States> {
   }
 
   render() {
-    let champs = this.state.champs && this.state.champs.length > 0 ? this.state.champs.map(champ => 
-      <li key={champ.key}><h2>{champ.name}</h2> <h4>{champ.title}</h4></li>
-    ) : <span>nofin</span>;
+    let champs = this.state.champs && this.state.champs.length > 0 ? this.state.champs.map(c => 
+      <ListItem champ={c}/>
+    ) : <span>empty</span>;
 
     return (
       <ul>
