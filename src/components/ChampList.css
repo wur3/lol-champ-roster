@@ -1,3 +1,9 @@
 ul {
+    background-image: url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Akali_0.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
     list-style-type: none;
 }
