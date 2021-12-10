@@ -41,13 +41,9 @@ class ChampList extends React.Component<{},States> {
     ) : <span>empty</span>;
 
     return (
-      <div>
-        <ul>
-          {
-            champs
-          }
-        </ul>
-      </div>
+      <ul>
+        { champs }
+      </ul>
     )
   }
 }
