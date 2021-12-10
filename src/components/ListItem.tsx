@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './ListItem.css'
 
 interface Champion {
   blurb: string,
