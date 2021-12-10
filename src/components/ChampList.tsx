@@ -28,9 +28,7 @@ class ChampList extends React.Component<{},States> {
         const current_ver = res.data[0]
         axios.get(`https://ddragon.leagueoflegends.com/cdn/${current_ver}/data/en_US/champion.json`)
           .then(res => {
-            const champions = Object.values(res.data.data)
-
-            console.log(Object.values(res.data.data));
+            const champions: Champion[] = Object.values(res.data.data)
 
             this.setState({ champs: champions });
         })
@@ -38,16 +36,18 @@ class ChampList extends React.Component<{},States> {
   }
 
   render() {
-    let champs = this.state.champs && this.state.champs.length > 0 ? this.state.champs.map(c => 
+    const champs = this.state.champs && this.state.champs.length > 0 ? this.state.champs.map(c => 
       <ListItem champ={c}/>
     ) : <span>empty</span>;
 
     return (
-      <ul>
-        {
-          champs
-        }
-      </ul>
+      <div>
+        <ul>
+          {
+            champs
+          }
+        </ul>
+      </div>
     )
   }
 }
