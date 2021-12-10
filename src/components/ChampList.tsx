@@ -26,7 +26,7 @@ class ChampList extends React.Component<{},States> {
     axios.get('https://ddragon.leagueoflegends.com/api/versions.json')
       .then(res => {
         const current_ver = res.data[0]
-        axios.get(`http://ddragon.leagueoflegends.com/cdn/${current_ver}/data/en_US/champion.json`)
+        axios.get(`https://ddragon.leagueoflegends.com/cdn/${current_ver}/data/en_US/champion.json`)
           .then(res => {
             const champions = Object.values(res.data.data)
 
