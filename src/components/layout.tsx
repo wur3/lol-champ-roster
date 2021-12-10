@@ -30,7 +30,7 @@ const Layout = ({ children }: LayoutProps) => {
 
   return (
     <>
-      <Header siteTitle={siteTitle} />
+      {/* <Header siteTitle={siteTitle} /> */}
       <div
         style={{
           margin: `0 auto`,
