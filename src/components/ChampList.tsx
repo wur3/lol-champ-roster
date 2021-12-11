@@ -5,7 +5,7 @@ import ListItem from './ListItem';
 
 interface Champion {
   blurb: string,
-  key: string,
+  id: string,
   name: string,
   title: string
 };

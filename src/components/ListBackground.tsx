@@ -6,10 +6,10 @@ import { RootState } from "../pages";
 
 const ListBackground = () => {
   const champ = useSelector((state: RootState) => state.champ.value)
-  console.log(champ.key);
+  console.log(champ.id);
 
   const divStyles: CSS.Properties = {
-    backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.key}_0.jpg)`,
+    backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg)`,
     filter: 'blur(5px)',
     width: '100%',
     height: '100vh',
