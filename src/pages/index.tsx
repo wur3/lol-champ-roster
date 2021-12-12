@@ -7,6 +7,17 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ChampList from "../components/ChampList"
 import ListBackground from "../components/ListBackground"
+import { setup } from 'axios-cache-adapter';
+
+const api = setup({
+  // `axios` options
+  baseURL: 'https://ddragon.leagueoflegends.com',
+
+  // `axios-cache-adapter` options
+  cache: {
+    maxAge: 15 * 60 * 1000
+  }
+})
 
 const store = configureStore({
   reducer: {
@@ -21,8 +32,8 @@ const IndexPage = () => (
   <Provider store={store}>
     <Layout>
       <Seo title="Home" />
-      <ListBackground />
-      <ChampList />
+      <ListBackground api={api} />
+      <ChampList api={api} />
     </Layout>
   </Provider>
 )
