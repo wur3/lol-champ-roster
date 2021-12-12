@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import { choose } from '../reducers/champ'
+import { choose } from '../reducers/Champ'
 import { Champion } from './ChampionInterface';
 import './ListItem.css'
 
