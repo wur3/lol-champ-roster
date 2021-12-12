@@ -18,9 +18,9 @@ const ChampList = () => {
       })
   });
 
-  const champList = champs && champs.length > 0 ? champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
+  const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
     <ListItem champ={c}/>
-  ) : <span>empty</span>;
+  );
 
   return (
     <ul>
