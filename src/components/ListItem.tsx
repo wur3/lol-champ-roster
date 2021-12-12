@@ -1,14 +1,8 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
 import { choose } from '../reducers/champ'
+import { Champion } from './ChampionInterface';
 import './ListItem.css'
-
-interface Champion {
-  blurb: string,
-  id: string,
-  name: string,
-  title: string
-};
 
 interface ListItemProps {
   champ: Champion
