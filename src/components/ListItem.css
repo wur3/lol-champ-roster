@@ -1,4 +1,8 @@
 li {
   /* TODO: remove border-style when debugging is done */
-  border-style: solid; 
+  /* border-style: solid;  */
+  padding: .5em;
+  margin: 3px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(7, 18, 26, 0.8);
 }

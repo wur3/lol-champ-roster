@@ -25,6 +25,7 @@ const ListBackground = ({api}: ListBackgroundProps) => {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
+    transition: 'background-image 0.5s ease 0s',
   }
 
   return (
