@@ -11,7 +11,7 @@ interface ListItemProps {
 function ListItem({ champ }: ListItemProps) {
   const dispatch = useDispatch()
   return (
-    <li key={champ.id} onClick={() => dispatch(choose({ id: champ.id }))}><h2>{champ.name}</h2> <h4>{champ.title}</h4></li>
+    <li key={champ.id} onMouseEnter={() => dispatch(choose({ id: champ.id }))}><h2>{champ.name}</h2> <h4>{champ.title}</h4></li>
   )
 }
 
