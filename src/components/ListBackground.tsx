@@ -3,9 +3,9 @@ import { AxiosInstance} from 'axios';
 import CSS from 'csstype';
 
 import { useSelector } from "react-redux";
-import { RootState } from "../pages";
 import { useState } from "react";
 import CachedApi from "../CachedApi";
+import { RootState } from "../state/createStore";
 
 const ListBackground = () => {
   const champ = useSelector((state: RootState) => state.champ.value)
