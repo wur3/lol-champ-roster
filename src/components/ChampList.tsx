@@ -1,15 +1,12 @@
 import * as React from 'react';
-import { AxiosInstance} from 'axios';
 import './ChampList.css';
 import ListItem from './ListItem';
 import { Champion } from './ChampionInterface';
 import { useEffect, useState } from 'react';
+import CachedApi from '../CachedApi';
 
-interface ChampListProps {
-  api: AxiosInstance
-}
-
-const ChampList = ({api}: ChampListProps) => {
+const api = CachedApi.axiosInstance()
+const ChampList = () => {
   const [champs, setChamps] = useState([] as Champion[]);
   useEffect(() => {
     api.get('/api/versions.json')
