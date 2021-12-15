@@ -14,6 +14,7 @@ const ListBackground = () => {
   getBase64(`/cdn/img/champion/splash/${champ.id}_0.jpg`, CachedApi.axiosInstance()).then(base64 => setBgUrl(base64))
 
   const divStyles: CSS.Properties = {
+    position: 'fixed',
     backgroundImage: `url(data:image/jpeg;base64,${bgUrl})`,
     filter: 'blur(5px)',
     width: '100%',
