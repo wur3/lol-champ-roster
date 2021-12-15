@@ -7,7 +7,7 @@ import { useState } from "react";
 import CachedApi from "../CachedApi";
 import { RootState } from "../state/createStore";
 
-const ListBackground = () => {
+const Background = () => {
   const champ = useSelector((state: RootState) => state.champ.value)
 
   const [bgUrl, setBgUrl] = useState('')
@@ -39,4 +39,4 @@ function getBase64(url: string, api: AxiosInstance) {
     .then(response => Buffer.from(response.data, 'binary').toString('base64'))
 }
 
-export default ListBackground
+export default Background
