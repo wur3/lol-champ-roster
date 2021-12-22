@@ -1,0 +1,15 @@
+* {
+  position: relative;
+}
+
+li {
+  display: inline-block;
+}
+
+img {
+  padding: 1em;
+}
+
+
+p {
+}

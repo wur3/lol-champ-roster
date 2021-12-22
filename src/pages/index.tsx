@@ -3,16 +3,16 @@ import * as React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ChampList from "../components/ChampList"
-import ListBackground from "../components/ListBackground"
+import Background from "../components/Background"
+import ChampInfo from "../components/ChampInfo"
 
 const IndexPage = () => (
-  // <Provider store={store}>
   <Layout>
     <Seo title="Home" />
-    <ListBackground />
-    <ChampList />
+    <Background />
+    {/* <ChampList /> */}
+    <ChampInfo />
   </Layout>
-  // </Provider>
 )
 
 export default IndexPage

@@ -8,7 +8,6 @@ export default class CachedApi {
     
       // `axios-cache-adapter` options
       cache: {
-        debug: true,
         maxAge: 15 * 60 * 1000,
       }
     })
