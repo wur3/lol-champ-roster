@@ -4,6 +4,7 @@ import ListItem from './ListItem';
 import { Champion } from './ChampionInterface';
 import { useEffect, useState } from 'react';
 import CachedApi from '../CachedApi';
+import { Link } from 'gatsby';
 
 const api = CachedApi.axiosInstance()
 const ChampList = () => {
@@ -31,7 +32,7 @@ const ChampList = () => {
 }
 
   const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
-    <ListItem champ={c}/>
+    <Link to={`/${c.name}`}><ListItem champ={c}/></Link>
   );
 
   return (
