@@ -1,5 +1,5 @@
 import * as React from 'react';
-import './ChampList.css';
+import CSS from 'csstype';
 import ListItem from './ListItem';
 import { Champion } from './ChampionInterface';
 import { useEffect, useState } from 'react';
@@ -20,12 +20,22 @@ const ChampList = () => {
     });
   }, [])
 
+  const listStyles: CSS.Properties = {
+    position: 'absolute',
+    top: '0%',
+    left: '25%',
+    textAlign: 'center',
+    width: '50%',
+    listStyleType: 'none',
+    overflow: 'hidden',
+}
+
   const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
     <ListItem champ={c}/>
   );
 
   return (
-    <ul>
+    <ul style={listStyles}>
       { champList }
     </ul>
   )

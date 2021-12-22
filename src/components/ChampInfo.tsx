@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import CachedApi from '../CachedApi'
 import { RootState } from '../state/createStore'
 import './ChampInfo.css'
+import CSS from 'csstype';
 import { IndivChampion, Spell } from './ChampionInterface';
 
 const api = CachedApi.axiosInstance()
@@ -38,17 +39,21 @@ function ChampInfo() {
     <p>{champData.lore}</p>
   ) : <div></div>
 
+  const liStyle: CSS.Properties = {
+    display: 'inline-block',
+  }
+
   const spells = champData ? ( 
     <ul>
-      <li><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/passive/${champData.passive.image.full}`} onMouseOver={() => {setTitle(champData.passive.name);
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/passive/${champData.passive.image.full}`} onMouseOver={() => {setTitle(champData.passive.name);
               setCaption(champData.passive.description);}}/></li>
-      <li><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[0].image.full}`} onMouseOver={() => {setTitle(champData.spells[0].name);
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[0].image.full}`} onMouseOver={() => {setTitle(champData.spells[0].name);
               setCaption(champData.spells[0].description);}}/></li>
-      <li><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[1].image.full}`} onMouseOver={() => {setTitle(champData.spells[1].name);
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[1].image.full}`} onMouseOver={() => {setTitle(champData.spells[1].name);
               setCaption(champData.spells[1].description);}}/></li>
-      <li><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[2].image.full}`} onMouseOver={() => {setTitle(champData.spells[2].name);
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[2].image.full}`} onMouseOver={() => {setTitle(champData.spells[2].name);
               setCaption(champData.spells[2].description);}}/></li>
-      <li><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[3].image.full}`} onMouseOver={() => {setTitle(champData.spells[3].name);
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${current_ver}/img/spell/${champData.spells[3].image.full}`} onMouseOver={() => {setTitle(champData.spells[3].name);
               setCaption(champData.spells[3].description);}}/></li>
     </ul>
   ) : <div></div>
