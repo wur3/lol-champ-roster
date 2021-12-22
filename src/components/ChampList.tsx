@@ -32,7 +32,7 @@ const ChampList = () => {
 }
 
   const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
-    <Link to={`/${c.name}`}><ListItem champ={c}/></Link>
+    <Link style={{ textDecoration: 'none' }} to={`/${c.name}`}><ListItem champ={c}/></Link>
   );
 
   return (
