@@ -29,10 +29,10 @@ const ChampList = () => {
     width: '50%',
     listStyleType: 'none',
     overflow: 'hidden',
-}
+  }
 
   const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map(c => 
-    <Link style={{ textDecoration: 'none' }} to={`/${c.name}`}><ListItem champ={c}/></Link>
+    <Link style={{ textDecoration: 'none' }} to={`/champion/${c.name}`}><ListItem champ={c}/></Link>
   );
 
   return (
