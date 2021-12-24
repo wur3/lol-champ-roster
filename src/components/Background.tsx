@@ -11,11 +11,11 @@ const Background = () => {
   const champ = useSelector((state: RootState) => state.champ.value)
 
   const [bgUrl, setBgUrl] = useState('')
-  getBase64(`/cdn/img/champion/splash/${champ.id}_0.jpg`, CachedApi.axiosInstance()).then(base64 => setBgUrl(base64))
+  // getBase64(`/cdn/img/champion/splash/${champ.id}_0.jpg`, CachedApi.axiosInstance()).then(base64 => setBgUrl(base64))
 
   const divStyles: CSS.Properties = {
     position: 'fixed',
-    backgroundImage: `url(data:image/jpeg;base64,${bgUrl})`,
+    backgroundImage: `url(https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${champ.id}_0.jpg)`,
     filter: 'blur(5px)',
     width: '100%',
     height: '100vh',
@@ -39,4 +39,4 @@ function getBase64(url: string, api: AxiosInstance) {
     .then(response => Buffer.from(response.data, 'binary').toString('base64'))
 }
 
-export default Background
+export const MemoizedBackground = React.memo(Background)
