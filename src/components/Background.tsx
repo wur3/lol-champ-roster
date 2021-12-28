@@ -23,7 +23,7 @@ const Background = () => {
     backgroundRepeat: 'no-repeat',
     backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
-    transition: 'background-image 0.5s ease 0s',
+    transition: 'background-image 0.5s ease 0.5s',
   }
 
   return (
