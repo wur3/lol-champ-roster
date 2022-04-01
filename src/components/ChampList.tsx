@@ -5,6 +5,7 @@ import { Champion } from './ChampionInterface';
 import { useEffect, useState } from 'react';
 import CachedApi from '../CachedApi';
 import { Link } from 'gatsby';
+import { MemoizedBackground } from './Background';
 
 const api = CachedApi.axiosInstance()
 const ChampList = () => {
@@ -22,6 +23,8 @@ const ChampList = () => {
   }, [])
 
   const listStyles: CSS.Properties = {
+    margin: '0',
+    padding: '0',
     position: 'absolute',
     top: '0%',
     left: '25%',
@@ -36,9 +39,12 @@ const ChampList = () => {
   );
 
   return (
+    <>
+    <MemoizedBackground />
     <ul style={listStyles}>
       { champList }
     </ul>
+    </>
   )
 }
 
