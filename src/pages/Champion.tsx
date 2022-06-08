@@ -28,6 +28,8 @@ const ChampPage = () => {
         const champion: any = res.data.data
         let champKey = champ as keyof typeof champion
         setChampData(champion[champKey])
+        setTitle(champion[champKey].passive.name);
+        setCaption(champion[champKey].passive.description);
       })
     }
   }, [version, language])
