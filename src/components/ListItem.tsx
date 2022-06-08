@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { useDispatch } from 'react-redux';
-import { choose } from '../reducers/Champ'
+import { setChamp } from '../reducers/Champ'
 import { Champion } from './ChampionInterface';
 import CSS from 'csstype';
 
@@ -18,7 +18,7 @@ const listItemStyles: CSS.Properties = {
 function ListItem({ champ }: ListItemProps) {
   const dispatch = useDispatch()
   return (
-    <li style={listItemStyles} key={champ.id} onMouseEnter={() => dispatch(choose({ id: champ.id }))}><h2>{champ.name}</h2> <h4>{champ.title}</h4></li>
+    <li style={listItemStyles} key={champ.id} onMouseEnter={() => dispatch(setChamp({ id: champ.id, name: champ.name }))}><h2>{champ.name}</h2> <h4>{champ.title}</h4></li>
   )
 }
 

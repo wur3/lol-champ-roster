@@ -1,5 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
 import champReducer from '../reducers/Champ';
+import versionReducer from '../reducers/Version';
+import languageReducer from '../reducers/Language';
 
 
 // Instantiating store in `wrapRootElement` handler ensures:
@@ -8,6 +10,8 @@ import champReducer from '../reducers/Champ';
 export const store = configureStore({
   reducer: {
     champ: champReducer,
+    version: versionReducer,
+    language: languageReducer,
   },
 })
 

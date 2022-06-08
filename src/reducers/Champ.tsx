@@ -2,14 +2,14 @@ import { createSlice} from "@reduxjs/toolkit";
 
 export const champSlice = createSlice({
   name: "champ",
-  initialState: { value: { id: "Aatrox" } },
+  initialState: { value: { id: "Aatrox", name: "Aatrox", all: [] as String[] } },
   reducers: {
-    choose: (state, action) => { 
+    setChamp: (state, action) => { 
       state.value = action.payload;
     }
   }
 });
 
-export const { choose } = champSlice.actions;
+export const { setChamp } = champSlice.actions;
 
 export default champSlice.reducer;
