@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import CachedApi from '../CachedApi'
 import { RootState } from '../state/createStore'
 import CSS from 'csstype';
@@ -7,45 +7,30 @@ import { IndivChampion } from '../components/ChampionInterface';
 import { MemoizedBackground } from '../components/Background';
 import LanguageDropdown from '../components/LanguageDropdown';
 import VersionDropdown from '../components/VersionDropdown';
-import { setVersion } from '../reducers/Version';
-import { setLanguage } from '../reducers/Language';
 import { useParams } from 'react-router-dom';
 
 const api = CachedApi.axiosInstance()
 const ChampPage = () => {
-  const dispatch = useDispatch()
   // const champ = useSelector((state: RootState) => state.champ.value)
   const version = useSelector((state: RootState) => state.version.value)
   const language = useSelector((state: RootState) => state.language.value)
 
-  const [champ, setChamp] = useState(useParams().champion || '')
+  const [champ, setChamp] = useState(useParams().champion)
   const [champData, setChampData] = useState<IndivChampion>()
 
   const [title, setTitle] = useState('')
   const [caption, setCaption] = useState('')
 
-  const champFromPath = 
-
   useEffect(() => {
-    api.get('/api/versions.json')
-    .then(res => {
-      const vs: String[] = Object.values(res.data)
-      dispatch(setVersion({ num: vs[0], all: vs}))
-    })
-    api.get('/cdn/languages.json')
-    .then(res => {
-      const ls: String[] = Object.values(res.data)
-      dispatch(setLanguage({ code: ls[0], all: ls }))
-    })
-
-    console.log(champFromPath)
-    api.get(`/cdn/${version.num}/data/${language.code}/champion/${champ}.json`)
+    if (version.num && language.code) {
+      api.get(`/cdn/${version.num}/data/${language.code}/champion/${champ}.json`)
       .then(res => {
         const champion: any = res.data.data
         let champKey = champ as keyof typeof champion
         setChampData(champion[champKey])
       })
-  }, [])
+    }
+  }, [version, language])
 
   const nameTitle = champData ? (
     <div><h2>{ champData.title }</h2><h1>{ champData.name }</h1></div>

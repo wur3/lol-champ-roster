@@ -16,12 +16,14 @@ const ChampList = () => {
   const language = useSelector((state: RootState) => state.language.value)
 
   useEffect(() => {
-    api.get(`/cdn/${version.num}/data/${language.code}/champion.json`)
+    if (version.num && language.code) {
+      api.get(`/cdn/${version.num}/data/${language.code}/champion.json`)
       .then(res => {
         const champions: Champion[] = Object.values(res.data.data)
         setChamps(champions);
       })
-  }, [])
+    }
+  }, [version, language])
 
   const listStyles: CSS.Properties = {
     margin: '0',
