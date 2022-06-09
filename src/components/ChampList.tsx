@@ -40,7 +40,7 @@ const ChampList = () => {
   const champList = champs.sort((a,b)=>a['name'].localeCompare(b['name'])).map((c,i) => 
     <Link style={{ textDecoration: 'none' }} 
           key={i} 
-          to={`/champion/${c.id}`}
+          to={`/champion/${c.id}`} // Note to self: DO NOT USE c.name - Some languages' champ names are not in US-ASCII. Also for Vel'Koz and Wukong's sake
     >
       <ListItem champ={c}/>
     </Link>
