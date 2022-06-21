@@ -104,7 +104,7 @@ const ChampPage = () => {
     </ul>
   ) : <div></div>
 
-  // TEMP: copied from ChampList
+  // TEMP: copied from ChampList and ListItem :]
   const divStyles: CSS.Properties = {
     position: 'absolute',
     top: '0%',
@@ -113,6 +113,10 @@ const ChampPage = () => {
     width: '50%',
     listStyleType: 'none',
     overflow: 'hidden',
+    padding: '.5em',
+    margin: '3px',
+    color: 'rgb(255, 255, 255)',
+    backgroundColor: 'rgb(7, 18, 26, 0.8)',
   }
 
   return (
