@@ -82,6 +82,16 @@ const ChampPage = () => {
     <div><h2>{ champData.title }</h2><h1>{ champData.name }</h1></div>
   ) : <div></div>
 
+  const champImgStyle: CSS.Properties = {
+    padding: '1em',
+  }
+
+  const champImg = champData ? (
+    <img src={`https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champ}_0.jpg`} style={champImgStyle}></img>
+  ) : <div></div>
+
+
+
   const desc = champData ? (
     <p>{champData.lore}</p>
   ) : <div></div>
@@ -90,21 +100,20 @@ const ChampPage = () => {
     display: 'inline-block',
   }
 
-  const imgStyle: CSS.Properties = {
+  const spellsImgStyle: CSS.Properties = {
     padding: '1em',
   }
 
   const spells = champData ? ( 
     <ul>
-      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/passive/${champData.passive.image.full}`} style={imgStyle} onMouseOver={() => setHoveredSpell(Spells.Passive)}/></li>
-      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[0].image.full}`} style={imgStyle} onMouseOver={() => setHoveredSpell(Spells.Q)}/></li>
-      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[1].image.full}`} style={imgStyle} onMouseOver={() => setHoveredSpell(Spells.W)}/></li>
-      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[2].image.full}`} style={imgStyle} onMouseOver={() => setHoveredSpell(Spells.E)}/></li>
-      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[3].image.full}`} style={imgStyle} onMouseOver={() => setHoveredSpell(Spells.R)}/></li>
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/passive/${champData.passive.image.full}`} style={spellsImgStyle} onMouseOver={() => setHoveredSpell(Spells.Passive)}/></li>
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[0].image.full}`} style={spellsImgStyle} onMouseOver={() => setHoveredSpell(Spells.Q)}/></li>
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[1].image.full}`} style={spellsImgStyle} onMouseOver={() => setHoveredSpell(Spells.W)}/></li>
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[2].image.full}`} style={spellsImgStyle} onMouseOver={() => setHoveredSpell(Spells.E)}/></li>
+      <li style={liStyle}><img src={`https://ddragon.leagueoflegends.com/cdn/${version.num}/img/spell/${champData.spells[3].image.full}`} style={spellsImgStyle} onMouseOver={() => setHoveredSpell(Spells.R)}/></li>
     </ul>
   ) : <div></div>
 
-  // TEMP: copied from ChampList and ListItem :]
   const divStyles: CSS.Properties = {
     position: 'absolute',
     top: '0%',
@@ -126,6 +135,7 @@ const ChampPage = () => {
     <LanguageDropdown />
     <div style={divStyles}>
       { nameTitle }
+      { champImg }
       { desc }
       <ul>
         { spells }
